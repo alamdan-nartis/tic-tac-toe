@@ -1,6 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import Amplify, { Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
+
+import { withAuthenticator } from 'aws-amplify-react-native'
+export default withAuthenticator(App)
 
 function Square (props) {
     return (
